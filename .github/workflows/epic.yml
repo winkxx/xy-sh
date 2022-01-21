@@ -18,9 +18,14 @@ jobs:
         cd ~/epic-awesome-gamer
         pip3 install -r requirements.txt
         cd ~/epic-awesome-gamer/src
-    - name: 运行
+    - name: 获取cookie
       run: |
         cd ~/epic-awesome-gamer/src
-        python3 main.py get
+        python3 main.py challenge
         #python3 ~/epicgames-claimer/main.py -u ${{ secrets.EPIC_USER }} -p ${{ secrets.EPIC_PAS }} -ptt ${{ secrets.TG_BOT }} -pti ${{ secrets.TG_ID }}
+        
+    - name: 获取游戏
+      run: |
+        cd ~/epic-awesome-gamer/src
+        python3 main.py get       
 
