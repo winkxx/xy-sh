@@ -24,6 +24,11 @@ jobs:
         cd ~/epic-awesome-gamer/src
         python3 main.py install       
 
+    - name: 人机验证
+      run: |
+        cd ~/epic-awesome-gamer/src
+        python3 main.py challenge
+
     - name: 获取游戏
       run: |
         cd ~/epic-awesome-gamer/src
