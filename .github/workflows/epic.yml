@@ -19,9 +19,12 @@ jobs:
         pip3 install -r requirements.txt
         cd ~/epic-awesome-gamer/src
 
-    - name: 安装
+    - name: 安装模型
       run: |
         cd ~/epic-awesome-gamer/src
         python3 main.py install       
-        #cd ~/epic-awesome-gamer/src
-        #python3 main.py install
+
+    - name: 获取游戏
+      run: |
+        cd ~/epic-awesome-gamer/src
+        python3 main.py get
