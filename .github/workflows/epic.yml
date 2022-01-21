@@ -20,7 +20,7 @@ jobs:
         cd ~/epic-awesome-gamer/src
     - name: 运行
       run: |
-        cd ~/epic-awesome-gamer/src/apis/scaffold
-        python3 get.py
+        cd ~/epic-awesome-gamer/src
+        python3 main.py ping
         #python3 ~/epicgames-claimer/main.py -u ${{ secrets.EPIC_USER }} -p ${{ secrets.EPIC_PAS }} -ptt ${{ secrets.TG_BOT }} -pti ${{ secrets.TG_ID }}
 
