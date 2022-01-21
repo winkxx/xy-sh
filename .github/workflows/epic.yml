@@ -1,6 +1,6 @@
 name: AutoDownloader
 on:
-  gollum
+  workflow_dispatch: # 手动触发
 jobs:
   AutoDownloaderProcess:
     runs-on: ubuntu-20.04
