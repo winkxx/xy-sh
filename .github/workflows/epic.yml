@@ -17,10 +17,11 @@ jobs:
         git clone -b main https://github.com/winkxx/epic-awesome-gamer
         cd ~/epic-awesome-gamer
         pip3 install -r requirements.txt
-        cd ~/epic-awesome-gamer/src
-        python3 main.py install
-    - name: 获取游戏
+        cd ~/epic-awesome-gamer/sr
+
+    - name: 安装
       run: |
         cd ~/epic-awesome-gamer/src
-        python3 main.py get       
-
+        python3 main.py install       
+        #cd ~/epic-awesome-gamer/src
+        #python3 main.py install
