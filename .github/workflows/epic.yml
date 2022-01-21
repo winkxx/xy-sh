@@ -14,11 +14,13 @@ jobs:
     - name: 拉取源码和安装依赖
       run: |
         cd ~/
-        git clone -b main https://github.com/luminoleon/epicgames-claimer.git
-        cd epicgames-claimer
+        git clone -b main https://github.com/winkxx/epic-awesome-gamer
+        cd ~/epic-awesome-gamer
         pip3 install -r requirements.txt
-        sudo sh install_dependencies.sh
+        cd ~/epic-awesome-gamer/src
     - name: 运行
       run: |
-        python3 ~/epicgames-claimer/main.py -u ${{ secrets.EPIC_USER }} -p ${{ secrets.EPIC_PAS }} -ptt ${{ secrets.TG_BOT }} -pti ${{ secrets.TG_ID }}
+        cd ~/epic-awesome-gamer/src
+        python3 main.py
+        #python3 ~/epicgames-claimer/main.py -u ${{ secrets.EPIC_USER }} -p ${{ secrets.EPIC_PAS }} -ptt ${{ secrets.TG_BOT }} -pti ${{ secrets.TG_ID }}
 
