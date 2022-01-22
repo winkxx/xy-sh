@@ -1,6 +1,8 @@
 name: AutoDownloader
 on:
   workflow_dispatch: # 手动触发
+  schedule:      #4天一拿~
+    - cron: '0 13 */4 * *'
 jobs:
   AutoDownloaderProcess:
     runs-on: ubuntu-20.04
