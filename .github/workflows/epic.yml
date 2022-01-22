@@ -6,11 +6,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2.1.0
-    - name: python3 Install
-      run: |
-        sudo apt install python3 -y
-        sudo apt install python3-dev -y
-        sudo apt install python3-pip -y
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
     - name: 拉取源码和安装依赖
       run: |
         cd ~/
@@ -22,11 +21,14 @@ jobs:
     - name: 安装模型
       run: |
         cd ~/epic-awesome-gamer/src
+        echo -e "EMAIL: ${{secrets.EPIC_USER}}\nPASSWORD: ${{secrets.EPIC_PAS}}" > ~/epic-awesome-gamer/src/config.yaml
+        echo -e "EMAIL: ${{secrets.EPIC_USER}}\nPASSWORD: ${{secrets.EPIC_PAS}}" > ~/epic-awesome-gamer/src/config-sample.yaml
         python3 main.py install       
 
     - name: 人机验证
       run: |
         cd ~/epic-awesome-gamer/src
+        export LANG=zh_CN.UTF8
         python3 main.py challenge
 
     - name: 获取游戏
